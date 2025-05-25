@@ -1,0 +1,133 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Body dark mode style */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Card background aur text color dark mode me */
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+/* Input, select, button dark mode me */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode button {
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+/* Task list items background aur text color */
+body.dark-mode #taskList li {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  box-shadow: none;
+}
+
+/* Hover effect for task items in dark mode */
+body.dark-mode #taskList li:hover {
+  background-color: #3a3a3a;
+}
+
+
+.card {
+  border-radius: 12px;
+}
+
+.input-group > *:not(:last-child) {
+  margin-right: 6px;
+}
+
+#addTask {
+  border-radius: 6px;
+}
+
+#taskList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#taskList li.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+  background-color: #d4edda;
+}
+
+#taskList li:hover {
+  background-color: #e9ecef;
+  transform: scale(1.02);
+}
+
+.priority-low::before,
+.priority-medium::before,
+.priority-high::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.priority-low::before {
+  background-color: #007bff; /* Blue */
+}
+
+.priority-medium::before {
+  background-color: #fd7e14; /* Orange */
+}
+
+.priority-high::before {
+  background-color: #dc3545; /* Red */
+}
+
+.filter-btn.active {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.progress {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  transition: width 0.4s ease;
+}
+
+#clearAll,
+#toggleDarkMode {
+  cursor: pointer;
+}
+
+#charCounter {
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .input-group {
+    flex-direction: column;
+  }
+  .input-group > * {
+    margin-bottom: 8px !important;
+  }
+  #prioritySelect {
+    width: 100% !important;
+  }
+}
